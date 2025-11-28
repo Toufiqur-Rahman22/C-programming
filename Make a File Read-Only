@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char filename[50];
+
+    printf("Enter file name: ");
+    scanf("%s", filename);
+
+    // chmod 444 sets read-only permission (Linux)
+    char command[100];
+    sprintf(command, "chmod 444 %s", filename);
+
+    system(command);
+
+    printf("File %s is now read-only.\n", filename);
+    return 0;
+}
