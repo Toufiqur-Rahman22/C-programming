@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+char *code = "#include <stdio.h>%cchar *code = %c%s%c;%cint main(){printf(code,10,34,code,34,10,10);return 0;}";
+
+int main() {
+    printf(code, 10, 34, code, 34, 10, 10);
+    return 0;
+}
