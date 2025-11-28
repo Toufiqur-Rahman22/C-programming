@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 0;
+    int result;
+
+    printf("Demonstrating Runtime Exception: Division by Zero\n");
+
+    // This will cause a runtime error
+    result = a / b;
+
+    printf("Result = %d\n", result);
+
+    return 0;
+}
