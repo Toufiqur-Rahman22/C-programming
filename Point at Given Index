@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    char s[200];
+    int index;
+
+    printf("Enter string: ");
+    gets(s);
+    printf("Enter index: ");
+    scanf("%d", &index);
+
+    printf("Unicode code point: %d", (unsigned char)s[index]);
+    return 0;
+}
