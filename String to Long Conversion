@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    char str[50];
+    long num;
+
+    printf("Enter a string number: ");
+    scanf("%s", str);
+
+    num = strtol(str, NULL, 10);
+
+    printf("Long: %ld", num);
+    return 0;
+}
