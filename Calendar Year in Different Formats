@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int day, month, year;
+    char *months[] = { 
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    };
+
+    printf("Enter day month year (DD MM YYYY): ");
+    scanf("%d %d %d", &day, &month, &year);
+
+    printf("\nDifferent Date Formats:\n");
+    printf("1. DD-MM-YYYY   : %02d-%02d-%04d\n", day, month, year);
+    printf("2. MM/DD/YYYY   : %02d/%02d/%04d\n", month, day, year);
+    printf("3. Month Day, Y : %s %d, %d\n", months[month - 1], day, year);
+    printf("4. YYYY.MM.DD   : %04d.%02d.%02d\n", year, month, day);
+    printf("5. DD Month YYYY: %02d %s %04d\n", day, months[month - 1], year);
+
+    return 0;
+}
