@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int arr[100], n, *p, *q;
+
+    printf("Enter size: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for (p = arr; p < arr + n; p++)
+        scanf("%d", p);
+
+    for (p = arr; p < arr + n - 1; p++)
+        for (q = p + 1; q < arr + n; q++)
+            if (*p > *q) {
+                int temp = *p;
+                *p = *q;
+                *q = temp;
+            }
+
+    printf("Sorted array: ");
+    for (p = arr; p < arr + n; p++)
+        printf("%d ", *p);
+
+    return 0;
+}
