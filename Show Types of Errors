@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+    printf("Types of Errors in C:\n");
+
+    printf("1. Compile-time Errors: Syntax mistakes.\n");
+    printf("2. Runtime Errors: Occur during execution (e.g., divide by zero).\n");
+    printf("3. Logical Errors: Wrong output due to wrong logic.\n");
+
+    return 0;
+}
