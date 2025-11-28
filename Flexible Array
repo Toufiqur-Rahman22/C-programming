@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    int count;
+    float marks[];  // Flexible Array Member
+};
+
+int main() {
+    int n;
+    printf("Enter number of subjects: ");
+    scanf("%d", &n);
+
+    struct Student *s = malloc(sizeof(struct Student) + n * sizeof(float));
+    s->count = n;
+
+    printf("Enter marks: ");
+    for (int i = 0; i < n; i++)
+        scanf("%f", &s->marks[i]);
+
+    printf("Marks: ");
+    for (int i = 0; i < n; i++)
+        printf("%.2f ", s->marks[i]);
+
+    free(s);
+    return 0;
+}
