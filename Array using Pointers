@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int arr[50], n;
+    int *p;
+
+    printf("Enter size: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for (p = arr; p < arr + n; p++)
+        scanf("%d", p);
+
+    int max = *arr;
+    for (p = arr + 1; p < arr + n; p++)
+        if (*p > max)
+            max = *p;
+
+    printf("Largest = %d", max);
+    return 0;
+}
