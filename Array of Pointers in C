@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20;
+    int *arr[2][2] = { {&a, &b}, {&a, &b} };
+
+    printf("%d", *arr[0][1]); // prints 20
+    return 0;
+}
