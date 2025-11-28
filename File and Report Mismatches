@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    FILE *f1, *f2;
+    char file1[50], file2[50];
+    int c1, c2, pos = 0, mismatch = 0;
+
+    printf("Enter first file: ");
+    scanf("%s", file1);
+
+    printf("Enter second file: ");
+    scanf("%s", file2);
+
+    f1 = fopen(file1, "r");
+    f2 = fopen(file2, "r");
+
+    if (!f1 || !f2) {
+        printf("Error opening files.\n");
+        return 1;
+    }
+
+    while ((c1 = f1getc(f1)) != EOF && (c2 = f1getc(f2)) != EOF) {
+        pos++;
+        if (c1 != c2) {
+            printf("Mismatch at position %d: '%c' != '%c'\n", pos, c1, c2);
+            mismatch = 1;
+        }
+    }
+
+    fclose(f1);
+    fclose(f2);
+
+    if (!mismatch)
+        printf("Files are identical.\n");
+
+    return 0;
+}
