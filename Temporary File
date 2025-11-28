@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp = tmpfile();   // creates temporary file
+
+    if (!fp) {
+        printf("Error creating temp file\n");
+        return 1;
+    }
+
+    fprintf(fp, "This is a temporary file.\n");
+    printf("Temporary file created successfully.\n");
+
+    fclose(fp);
+    return 0;
+}
