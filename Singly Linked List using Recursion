@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* next;
+};
+struct Node* copyList(struct Node* head) {
+    if (head == NULL)
+        return NULL;
+
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = head->data;
+    newNode->next = copyList(head->next);
+    return newNode;
+}
+
+void printList(struct Node* head) {
+    while (head) {
+        printf("%d ", head->data);
+        head = head->next;
+    }
+}
+int main() {
+    struct Node *head = NULL, *temp, *newNode;
+ int arr[] = {3, 5, 7};
+    for (int i = 0; i < 3; i++) {
+        newNode = (struct Node*)malloc(sizeof(struct Node));
+        newNode->data = arr[i];
+        newNode->next = NULL;
+      if (head == NULL)
+            head = temp = newNode;
+        else {
+            temp->next = newNode;
+            temp = newNode;
+        }
+    }
+
+    struct Node* copy = copyList(head);
+
+    printf("Original List: ");
+    printList(head);
+
+    printf("\nCopied List: ");
+    printList(copy);
+
+    return 0;
+}
