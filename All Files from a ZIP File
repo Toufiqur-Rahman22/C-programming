@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include "miniz.h"   // external library
+
+int main() {
+    mz_zip_archive zip;
+    mz_zip_zero_struct(&zip);
+
+    if (!mz_zip_reader_init_file(&zip, "myfiles.zip", 0)) {
+        printf("Cannot open zip file\n");
+        return 1;
+    }
+
+    int total = mz_zip_reader_get_num_files(&zip);
+    for (int i = 0; i < total; i++) {
+        char name[256];
+        mz_zip_reader_get_filename(&zip, i, name, sizeof(name));
+        printf("%s\n", name);
+    }
+
+    mz_zip_reader_end(&zip);
+    return 0;
+}
