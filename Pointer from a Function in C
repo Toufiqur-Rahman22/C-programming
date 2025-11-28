@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int* getMax(int *a, int *b) {
+    if (*a > *b)
+        return a;
+    else
+        return b;
+}
+
+int main() {
+    int x = 10, y = 20;
+    int *p = getMax(&x, &y);
+
+    printf("Largest = %d", *p);
+    return 0;
+}
