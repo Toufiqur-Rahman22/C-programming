@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    float hours;
+    printf("Enter hours: ");
+    scanf("%f", &hours);
+
+    float minutes = hours * 60;
+    float seconds = hours * 3600;
+
+    printf("Minutes = %.2f\n", minutes);
+    printf("Seconds = %.2f\n", seconds);
+
+    return 0;
+}
